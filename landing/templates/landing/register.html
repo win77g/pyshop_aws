@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+{#<div class="general-container" >#}
+{#<div class="container">#}
+{#    <div class="row">#}
+{#        <div class=" col-xs-6 tops ">#}
+{#<h5>Регистрация</h5>#}
+{#            <form action="register" method="post" class="form text-center" >{% csrf_token %}#}
+{#               {{ form.as_p }}#}
+{#            <button type="submit">Зарегистрироваться</button>#}
+{#           </form>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{#</div>#}
+<div class="account-create-area">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<ul class="page-menu">
+								<li><a href="/">Home</a></li>
+								<li class="active">Регистрация</li>
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="area-title">
+								<h3 class="title-group gfont-1">Регистрация клиента </h3>
+							</div>
+						</div>
+					</div>
+					<div class="account-create">
+						<form action="#" method="post">{% csrf_token %}
+							<div class="row ">
+{#								<div class="col-md-6 col-md-offset-3" >#}
+{#                                    {{ form|crispy }}#}
+                                    <!--crispy-forms-->
+                                 <div class="col-md-12" >
+									<div class="account-create-box">
+										<h2 class="box-info">Персональная информация</h2>
+										<div class="row">
+                                            <div class="col-sm-3 col-xs-12">
+												<div class="single-create">
+                                                    {{ form.username|as_crispy_field }}
+												</div>
+											</div>
+											<div class="col-sm-3 col-xs-12">
+												<div class="single-create">
+													{{ form.first_name|as_crispy_field }}
+												</div>
+											</div>
+											<div class="col-sm-3 col-xs-12">
+												<div class="single-create">
+													{{ form.last_name|as_crispy_field }}
+												</div>
+											</div>
+											<div class="col-sm-3 col-xs-12">
+												<div class="single-create">
+													{{ form.email|as_crispy_field }}
+												</div>
+											</div>
+											<div class="col-xs-12">
+												<p class="for-newsletter" ><input type="checkbox" />Подписаться на рассылку почты</p>
+											</div>
+										</div>
+									</div>
+									<div class="account-create-box">
+										<h2 class="box-info">Пароль</h2>
+										<div class="row">
+											<div class="col-md-4 col-sm-6 col-xs-12">
+												<div class="single-create">
+													{{ form.password|as_crispy_field }}
+												</div>
+											</div>
+											<div class="col-md-4 col-sm-6 col-xs-12">
+												<div class="single-create">
+													{{ form.password_check|as_crispy_field }}
+												</div>
+											</div>
+										</div>
+									</div>
+                                    <!--crispy-forms-->
+									<div class="submit-area">
+										<p class="required text-right">* Обязательное поле</p>
+										<button type="submit" class="btn btn-primary floatright">Зарегистрироваться</button>
+										<a href="/" class="float-left"><span><i class="fa fa-angle-double-left"></i></span> Назад</a>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- End Account-Create-Area -->
+{% endblock content %}

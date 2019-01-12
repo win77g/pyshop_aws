@@ -1,0 +1,39 @@
+
+{% load static %}
+{% load  mptt_tags %}
+<!-- CATEGORY-MENU-LIST START -->
+	                    <div class="left-category-menu hidden-sm hidden-xs">
+	                        <div class="left-product-cat">
+	                            <div class="category-heading">
+	                                <h2>categories</h2>
+	                            </div>
+	                            <div class="category-menu-list">
+	                                <ul>
+                                        <!-- Single menu start -->
+                                        {% recursetree category %}
+	                                    <li class="arrow-plus ">
+                                            <div class="subcategory" >
+                                                <a class="sub" href="/category/{{ node.id}}/">{{ node.name }}</a>
+                                            </div>
+                                            <!--  MEGA MENU START -->
+                                            <div class="cat-left-drop-menu">
+	                                            <div class="cat-left-drop-menu-left">
+                                                    <a class="menu-item-heading" href="#">{{ node.name }}</a>
+                                                    <ul>
+                                                        {% if not node.is_leaf_node %}
+                                                            <li >{{ children }}</li>
+                                                        {% endif %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- MEGA MENU END -->
+	                                    </li>
+                                     {% endrecursetree  %}
+	                                    <!-- Single menu end -->
+										<!-- Single menu start -->
+                                        <!-- MENU ACCORDION END -->
+	                                </ul>
+	                            </div>
+	                        </div>
+	                    </div>
+                       <!-- START SIDEBAR-BANNER -->
