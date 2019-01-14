@@ -68,7 +68,7 @@ def register(request):
                  [mail],
                  )
 
-       return HttpResponseRedirect('/login/')
+       return HttpResponseRedirect('/login_two/')
    context = {'form' : form}
    return render(request, 'landing/register.html', context)
 
@@ -158,3 +158,7 @@ def delete_item_in_wishlist(request,product_id):
     products_in_wishlist.delete()
     # return render(request, 'landing/checkout.html', locals())
     return HttpResponseRedirect('/account/')
+
+def register_alarm():
+    return HttpResponseRedirect('/account/')
+

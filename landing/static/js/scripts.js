@@ -216,4 +216,9 @@ $(document).ready(function () {
         }
      });
 
+     $('.cart_alarm').function(
+         alert("Page is loaded");
+     )
+
 });
+
